@@ -1,0 +1,57 @@
+.bar {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-3) 0 var(--sp-4);
+  border-radius: 0 0 var(--r-panel) var(--r-panel);
+  border-top: none;
+  position: relative;
+  z-index: 40;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--accent-600), #8b5cf6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 3px 8px rgba(75, 84, 196, 0.35);
+}
+
+.name {
+  font-weight: 600;
+  font-size: var(--fs-body);
+  letter-spacing: 0.01em;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.profileWrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.profileLabel {
+  font-size: var(--fs-caption);
+  color: var(--ink-3);
+}
+
+.profileSelect {
+  min-width: 150px;
+  height: 30px;
+}
+
+.profileDropdown {
+  width: 150px;
+}

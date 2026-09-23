@@ -1,0 +1,224 @@
+.panel {
+  width: 320px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-3) var(--sp-4) var(--sp-2);
+  flex: none;
+}
+
+.title {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-2) var(--sp-4) var(--sp-4);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+.textarea {
+  resize: none;
+  min-height: 96px;
+  max-height: 200px;
+  overflow-y: auto;
+  line-height: var(--lh-body);
+}
+.textarea {
+  width: 100%;
+  background: var(--glass-bg-input);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-radius: var(--r-control);
+  padding: 9px 10px;
+  font-size: var(--fs-body);
+  color: var(--ink-1);
+  transition: border-color var(--dur-1), box-shadow var(--dur-1), background-color var(--dur-1);
+}
+.textarea::placeholder {
+  color: var(--ink-3);
+}
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 3px var(--accent-050), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.select {
+  appearance: none;
+  width: 100%;
+  height: 34px;
+  padding: 0 26px 0 10px;
+  border-radius: var(--r-control);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-bg-input);
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-2) 50%), linear-gradient(135deg, var(--ink-2) 50%, transparent 50%);
+  background-position: calc(100% - 15px) 55%, calc(100% - 10px) 55%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  font-size: var(--fs-body);
+  color: var(--ink-1);
+  transition: border-color var(--dur-1), background-color var(--dur-1);
+}
+.select:focus {
+  outline: none;
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 3px var(--accent-050);
+}
+.select:disabled {
+  opacity: 0.5;
+}
+
+.unsupported {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.sizePicker {
+  position: relative;
+}
+
+.sizeTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sizeTrigger > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sizeTrigger > svg {
+  flex: none;
+}
+.sizeMenu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 4px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-control);
+  background: var(--glass-bg-input);
+  box-shadow: 0 10px 28px rgba(30, 35, 70, 0.18);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.ratioOption,
+.sizeOption,
+.sizeMenuBack {
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 5px 8px;
+  border: 0;
+  border-radius: calc(var(--r-control) - 2px);
+  background: transparent;
+  color: var(--ink-1);
+  font: inherit;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.sizeOption {
+  display: block;
+  text-overflow: ellipsis;
+}
+.ratioOption:hover,
+.sizeOption:hover,
+.sizeMenuBack:hover,
+.sizeOption[aria-selected="true"] {
+  background: var(--accent-050);
+}
+
+.ratioOption > span:nth-child(2),
+.sizeOption {
+  font-size: var(--fs-body);
+}
+
+.ratioOption svg:last-child {
+  margin-left: auto;
+  transform: rotate(-90deg);
+  color: var(--ink-3);
+}
+
+.ratioFrame {
+  display: block;
+  flex: none;
+  width: 34px;
+  max-height: 23px;
+  border: 1px solid var(--accent-500);
+  border-radius: 3px;
+  background: var(--accent-050);
+}
+
+.sizeMenuBack {
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--glass-border);
+  border-radius: 0;
+  color: var(--ink-2);
+}
+.foot {
+  flex: none;
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.cta {
+  width: 100%;
+  height: 38px;
+  font-weight: 600;
+}
+
+.hint {
+  margin: 0;
+  text-align: center;
+  font-size: var(--fs-caption);
+  color: var(--warn-700);
+}
+
+.spin {
+  animation: panel-spin 1s linear infinite;
+}
+@keyframes panel-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

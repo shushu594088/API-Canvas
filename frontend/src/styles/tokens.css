@@ -1,0 +1,60 @@
+:root {
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+
+  --r-control: 8px;
+  --r-panel: 10px;
+  --r-pill: 999px;
+
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei UI", system-ui, sans-serif;
+  --fs-caption: 12px;
+  --fs-body: 14px;
+  --fs-title: 18px;
+  --lh-body: 1.55;
+
+  --bg-base: #eef0f5;
+  --ink-1: #14162b;
+  --ink-2: #4a4f6b;
+  --ink-3: #646a87;
+  --ink-on-accent: #ffffff;
+
+  --accent-600: #4b54c4;
+  --accent-650: #3f47ad;
+  --accent-500: #5f68d6;
+  --accent-050: rgba(95, 104, 214, 0.1);
+
+  --danger-600: #b3402f;
+  --danger-050: rgba(179, 64, 47, 0.09);
+  --success-600: #237a4b;
+  --success-050: rgba(35, 122, 75, 0.1);
+  --warn-700: #8a5a12;
+  --warn-050: rgba(178, 122, 24, 0.12);
+
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-bg-strong: rgba(255, 255, 255, 0.74);
+  --glass-bg-input: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(20, 24, 48, 0.08);
+  --glass-hi: rgba(255, 255, 255, 0.7);
+  --shadow-pop: 0 8px 24px rgba(18, 22, 40, 0.08);
+  --shadow-modal: 0 18px 56px rgba(18, 22, 40, 0.18);
+
+  --dur-1: 150ms;
+  --dur-2: 220ms;
+  --dur-3: 380ms;
+  --dur-fade: 120ms;
+  --ease-spring: cubic-bezier(0.2, 1.1, 0.3, 1);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
+html[data-rm] {
+  --dur-1: 1ms;
+  --dur-2: 1ms;
+  --dur-3: 1ms;
+  --ease-spring: linear;
+  --ease-out: linear;
+}

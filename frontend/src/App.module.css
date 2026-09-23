@@ -1,0 +1,14 @@
+.workspace {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto 1fr 320px;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-3) var(--sp-3);
+}

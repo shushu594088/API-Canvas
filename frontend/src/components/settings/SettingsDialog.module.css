@@ -1,0 +1,276 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(238, 240, 245, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: sd-fade var(--dur-fade) var(--ease-out);
+}
+@keyframes sd-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.dialog {
+  width: min(760px, calc(100vw - 48px));
+  max-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-6);
+  animation: sd-in var(--dur-3) var(--ease-spring);
+}
+html[data-rm] .dialog {
+  animation-duration: var(--dur-fade);
+}
+@keyframes sd-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.dialogHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+
+.dialogTitle {
+  margin: 0;
+  font-size: var(--fs-title);
+  font-weight: 600;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--sp-6);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.listCol {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 1px solid var(--glass-border);
+  padding-right: var(--sp-4);
+}
+
+.listHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-2);
+}
+
+.listTitle {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+}
+
+.list {
+  flex: 1;
+  min-height: 120px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding-right: 2px;
+}
+
+.listEmpty {
+  color: var(--ink-3);
+  font-size: var(--fs-caption);
+  text-align: center;
+  margin: var(--sp-6) 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  border-radius: var(--r-control);
+  border: 1px solid transparent;
+  transition: background-color var(--dur-1);
+}
+.listItem:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+.listItemActive {
+  background: rgba(255, 255, 255, 0.68);
+  border-color: var(--glass-border);
+  box-shadow: inset 0 1px 0 var(--glass-hi), inset 2.5px 0 0 var(--accent-500);
+}
+
+.listItemMain {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: var(--sp-2) var(--sp-3);
+  color: var(--ink-1);
+}
+
+.listItemName {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 550;
+  font-size: var(--fs-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.defaultMark {
+  color: var(--warn-700);
+  display: inline-flex;
+}
+
+.listItemSub {
+  font-size: var(--fs-caption);
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listItemActions {
+  display: flex;
+  gap: 2px;
+  padding-right: var(--sp-1);
+  opacity: 0;
+  transition: opacity var(--dur-1);
+}
+.listItem:hover .listItemActions,
+.listItemActive .listItemActions,
+.listItemActions:focus-within {
+  opacity: 1;
+}
+
+.deleteBtn:hover:not(:disabled) {
+  color: var(--danger-600) !important;
+  background: var(--danger-050) !important;
+}
+
+.formCol {
+  min-width: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+.input {
+  width: 100%;
+  height: 34px;
+  background: var(--glass-bg-input);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-radius: var(--r-control);
+  padding: 0 10px;
+  font-size: var(--fs-body);
+  color: var(--ink-1);
+  transition: border-color var(--dur-1), box-shadow var(--dur-1), background-color var(--dur-1);
+}
+.input::placeholder {
+  color: var(--ink-3);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 3px var(--accent-050), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+}
+.formError {
+  margin: 0;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-control);
+  background: var(--danger-050);
+  color: var(--danger-600);
+  font-size: var(--fs-caption);
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--glass-border);
+}
+
+.actionSpacer {
+  flex: 1;
+}
+
+.modelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.modelLabel {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+}
+
+.modelList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-control);
+  background: var(--glass-bg-input);
+}
+
+.modelOption {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 28px;
+  color: var(--ink-1);
+  font-size: var(--fs-body);
+}
+
+.modelOption input {
+  accent-color: var(--accent-600);
+}
+
+.modelOption :global(.badge) {
+  margin-left: auto;
+}
+
+.modelHint {
+  margin: calc(var(--sp-2) * -1) 0 0;
+  color: var(--ink-3);
+  font-size: var(--fs-caption);
+}
